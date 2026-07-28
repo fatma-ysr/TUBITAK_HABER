@@ -2,7 +2,7 @@ name: RSS Topla
 
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 */4 * * *"  # her 4 saatte bir
   workflow_dispatch: {}
 
 concurrency:

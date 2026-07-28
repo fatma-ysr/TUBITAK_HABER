@@ -95,6 +95,24 @@ ORDER BY sayi DESC;
 `github-actions[bot]` kullanıcısıyla otomatik commit'ler. `data/` dizini
 veri sürekliliği için Git'te tutulur; `logs/` dizini tutulmaz.
 
+## Kaynak URL kontrolü
+
+RSS kaynaklarının URL'leri zamanla değişebilir veya kapanabilir (örn.
+Bigpara'nın eski adresi 404 vermeye başladı). Bunu erken yakalamak için:
+
+```bash
+python check_sources.py
+```
+
+Bu betik `sources.yaml`'daki her kaynağı indirip HTTP durumunu ve RSS olarak
+ayrıştırılabilirliğini kontrol eder; veritabanına hiçbir şey yazmaz. Bozuk bir
+kaynak bulursa hata koduyla çıkar.
+
+`.github/workflows/check-sources.yml` bu kontrolü her Pazartesi otomatik
+çalıştırır (ve elle tetiklenebilir). Bir kaynak bozulursa iş akışı kırmızı
+(başarısız) görünür ve GitHub, repo sahibine bildirim gönderir — böylece
+`sources.yaml`'ı elle güncellemeniz gerektiğini fark edersiniz.
+
 ## Lisans
 
 MIT.

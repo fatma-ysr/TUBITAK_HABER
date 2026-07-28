@@ -1,0 +1,25 @@
+name: Kaynak URL Kontrolu
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"  # her Pazartesi 05:00 UTC = 08:00 Europe/Istanbul
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Repo'yu checkout et
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Bagimliliklari kur
+        run: pip install -r requirements.txt
+
+      - name: Kaynak URL'lerini kontrol et
+        run: python check_sources.py
