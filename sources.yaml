@@ -1,0 +1,65 @@
+# sources.yaml
+# TUBITAK 2209-A projesi icin Turkce ekonomi haberi RSS kaynaklari.
+# Yeni kaynak eklemek icin buraya tek bir madde eklemeniz yeterlidir.
+# Kullanmadan once her URL'i tarayicida test edin; XML donmuyorsa kaldirin
+# ya da sitenin guncel RSS adresini bulup degistirin.
+
+sources:
+  # --- AJANS / KAMU (yayin cizgisi: resmi ton) ---
+  - name: "Anadolu Ajansi"
+    url: "https://www.aa.com.tr/tr/rss/default?cat=guncel"
+    category: "ajans"
+    not: "Genel guncel; ekonomi anahtar kelime filtresi gerekir"
+
+  - name: "TRT Haber"
+    url: "https://www.trthaber.com/sondakika.rss"
+    category: "ajans"
+    not: "Son dakika; ekonomi anahtar kelime filtresi gerekir"
+
+  # --- FINANS / EKONOMI (yayin cizgisi: is dunyasi) ---
+  - name: "BloombergHT"
+    url: "https://www.bloomberght.com/rss"
+    category: "finans"
+
+  - name: "Dunya Gazetesi"
+    url: "https://www.dunya.com/rss?dunya"
+    category: "finans"
+
+  - name: "Ekonomim"
+    url: "https://www.ekonomim.com/export/rss"
+    category: "finans"
+
+  - name: "Foreks"
+    url: "https://www.foreks.com/rss/"
+    category: "finans"
+
+  - name: "Investing.com Haberler"
+    url: "https://tr.investing.com/rss/news.rss"
+    category: "finans"
+
+  # NOT: "Bigpara" kaynagi (bigpara.hurriyet.com.tr/rss/) 2026-07 itibariyla
+  # 404 donuyor, kapatilmis gorunuyor. Onun yerine calisan Hurriyet Ekonomi
+  # akisi eklendi.
+  - name: "Hurriyet Ekonomi"
+    url: "https://www.hurriyet.com.tr/rss/ekonomi"
+    category: "finans"
+
+  # --- GENEL (yayin cizgisi: ana akim medya, ekonomi kanali) ---
+  - name: "NTV Ekonomi"
+    url: "https://www.ntv.com.tr/ekonomi.rss"
+    category: "genel"
+
+  - name: "Sozcu Ekonomi"
+    url: "https://www.sozcu.com.tr/feeds-rss-category-ekonomi"
+    category: "genel"
+
+  # --- ISTEGE BAGLI / GENISLETME (dilersen ekle) ---
+  # - name: "CNBC-e"
+  #   url: "https://www.cnbce.com/rss"
+  #   category: "finans"
+  # - name: "Forbes Turkiye"
+  #   url: "https://www.forbes.com.tr/rss"
+  #   category: "finans"
+  # - name: "Haberturk"
+  #   url: "https://www.haberturk.com/rss"
+  #   category: "genel"
